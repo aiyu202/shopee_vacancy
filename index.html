@@ -81,7 +81,7 @@
   <div class="header">
     <div class="header-top">
       <div class="logo-badge">🛒 Shopee</div>
-      <div class="header-date">更新日期：2026/06</div>
+      <div class="header-date">更新日期：2026/06/09</div>
     </div>
     <div class="header-title">蝦皮電商台灣總部｜現招職缺懶人包</div>
     <div class="header-sub">由邁斯朋招募顧問 Aiyu 整理提供</div>
@@ -192,10 +192,9 @@ function toggleShortOnly(btn) {
   shortOnly = !shortOnly;
   btn.classList.toggle('active', shortOnly);
   if (shortOnly) {
-    catFilter = 'all'; locFilter = 'all';
-    document.querySelectorAll('#cat-filters .fbtn, #loc-filters .fbtn').forEach(b => b.classList.remove('active'));
+    catFilter = 'all';
+    document.querySelectorAll('#cat-filters .fbtn').forEach(b => b.classList.remove('active'));
     document.querySelector('#cat-filters .fbtn').classList.add('active');
-    document.querySelector('#loc-filters .fbtn').classList.add('active');
   }
   renderCards();
 }
