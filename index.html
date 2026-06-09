@@ -117,14 +117,7 @@
       <button class="fbtn" onclick="setFilter('cat','內容標註',this)">🏷️ 內容標註</button>
       <button class="fbtn" onclick="setFilter('cat','直播/行銷',this)">🎬 直播/行銷</button>
     </div>
-    <div class="filter-label">依工作區域篩選</div>
-    <div class="filter-row" id="loc-filters">
-      <button class="fbtn active" onclick="setFilter('loc','all',this)">全部地區</button>
-      <button class="fbtn" onclick="setFilter('loc','台北希望',this)">📍 台北（希望）</button>
-      <button class="fbtn" onclick="setFilter('loc','台北松菸',this)">📍 台北（松菸）</button>
-      <button class="fbtn" onclick="setFilter('loc','UDN',this)">📍 UDN</button>
     </div>
-  </div>
 
   <div class="result-count" id="result-count"></div>
   <div id="cards"></div>
@@ -193,7 +186,6 @@ const jobs = [
 ];
 
 let catFilter = 'all';
-let locFilter = 'all';
 let shortOnly = false;
 
 function toggleShortOnly(btn) {
@@ -211,13 +203,8 @@ function toggleShortOnly(btn) {
 function setFilter(type, val, btn) {
   shortOnly = false;
   document.querySelector('.st-btn').classList.remove('active');
-  if (type === 'cat') {
-    catFilter = val;
+  catFilter = val;
     document.querySelectorAll('#cat-filters .fbtn').forEach(b => b.classList.remove('active'));
-  } else {
-    locFilter = val;
-    document.querySelectorAll('#loc-filters .fbtn').forEach(b => b.classList.remove('active'));
-  }
   btn.classList.add('active');
   renderCards();
 }
@@ -227,9 +214,7 @@ function renderCards() {
   const countEl = document.getElementById('result-count');
   const filtered = jobs.filter(j => {
     if (shortOnly) return j.short;
-    const catOk = catFilter === 'all' || j.cat === catFilter;
-    const locOk = locFilter === 'all' || j.loc === locFilter;
-    return catOk && locOk;
+    return catFilter === 'all' || j.cat === catFilter;
   });
   countEl.textContent = `共 ${filtered.length} 個職缺`;
   if (filtered.length === 0) {
