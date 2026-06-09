@@ -7,70 +7,69 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Noto Sans TC', 'PingFang TC', sans-serif; background: #f7f5f2; color: #1a1a1a; }
-  .page { max-width: 860px; margin: 0 auto; padding: 32px 20px 60px; }
+  .page { max-width: 900px; margin: 0 auto; padding: 28px 18px 60px; }
 
-  .header { background: #EE4D2D; border-radius: 16px; padding: 28px 28px 24px; margin-bottom: 20px; color: #fff; }
-  .header-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-  .logo-badge { background: rgba(255,255,255,0.2); border-radius: 8px; padding: 6px 14px; font-weight: 700; font-size: 18px; letter-spacing: 1px; }
-  .header-date { margin-left: auto; font-size: 12px; opacity: 0.8; background: rgba(0,0,0,0.15); border-radius: 20px; padding: 4px 12px; }
-  .header-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .header { background: #EE4D2D; border-radius: 16px; padding: 24px 26px 22px; margin-bottom: 18px; color: #fff; }
+  .header-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .logo-badge { background: rgba(255,255,255,0.2); border-radius: 8px; padding: 5px 14px; font-weight: 700; font-size: 17px; }
+  .header-date { margin-left: auto; font-size: 12px; opacity: 0.8; background: rgba(0,0,0,0.15); border-radius: 20px; padding: 3px 12px; }
+  .header-title { font-size: 21px; font-weight: 700; margin-bottom: 5px; }
   .header-sub { font-size: 13px; opacity: 0.85; }
 
-  .trust-bar { background: #fff; border: 1.5px solid #4caf50; border-radius: 12px; padding: 12px 16px; margin-bottom: 16px; display: flex; gap: 10px; align-items: flex-start; }
-  .trust-bar .icon { font-size: 18px; margin-top: 1px; flex-shrink: 0; }
+  .trust-bar { background: #fff; border: 1.5px solid #4caf50; border-radius: 12px; padding: 11px 15px; margin-bottom: 14px; display: flex; gap: 10px; align-items: flex-start; }
   .trust-bar p { font-size: 13px; color: #2e7d32; line-height: 1.6; }
   .trust-bar strong { color: #1b5e20; }
 
-  .perks { background: #fff8f0; border: 1px solid #f5c289; border-radius: 12px; padding: 14px 18px; margin-bottom: 16px; }
-  .perks-title { font-size: 13px; font-weight: 700; color: #b84a00; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
-  .perks-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .perks { background: #fff8f0; border: 1px solid #f5c289; border-radius: 12px; padding: 13px 17px; margin-bottom: 14px; }
+  .perks-title { font-size: 13px; font-weight: 700; color: #b84a00; margin-bottom: 9px; }
+  .perks-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
   .perks-list li { font-size: 13px; color: #5a3000; display: flex; gap: 8px; align-items: flex-start; }
   .perks-list li::before { content: "✦"; color: #EE4D2D; flex-shrink: 0; margin-top: 1px; }
 
-  /* Short-term highlight row */
-  .shortterm-row { margin-bottom: 14px; }
-  .shortterm-label { font-size: 12px; color: #888; margin-bottom: 6px; font-weight: 500; letter-spacing: 0.5px; }
-  .shortterm-btns { display: flex; flex-wrap: wrap; gap: 7px; }
-  .st-btn { font-size: 12px; padding: 6px 15px; border-radius: 20px; border: 1.5px solid #e67e22; background: #fff8f0; color: #c0540a; cursor: pointer; font-weight: 600; transition: all 0.15s; }
+  .shortterm-row { margin-bottom: 12px; }
+  .shortterm-label { font-size: 12px; color: #888; margin-bottom: 5px; font-weight: 500; }
+  .st-btn { font-size: 12px; padding: 6px 16px; border-radius: 20px; border: 1.5px solid #e67e22; background: #fff8f0; color: #c0540a; cursor: pointer; font-weight: 600; transition: all 0.15s; }
   .st-btn:hover { background: #fde8c8; }
   .st-btn.active { background: #e67e22; color: #fff; border-color: #e67e22; }
 
-  .filter-section { margin-bottom: 14px; }
-  .filter-label { font-size: 12px; color: #888; margin-bottom: 6px; font-weight: 500; letter-spacing: 0.5px; }
-  .filter-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 8px; }
-  .fbtn { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 1px solid #ddd; background: #fff; color: #555; cursor: pointer; transition: all 0.15s; }
+  .filter-section { margin-bottom: 12px; }
+  .filter-label { font-size: 12px; color: #888; margin-bottom: 5px; font-weight: 500; }
+  .filter-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .fbtn { font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid #ddd; background: #fff; color: #555; cursor: pointer; transition: all 0.15s; }
   .fbtn:hover { border-color: #EE4D2D; color: #EE4D2D; }
   .fbtn.active { background: #EE4D2D; color: #fff; border-color: #EE4D2D; }
 
-  #cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-bottom: 28px; }
-  .vcard { background: #fff; border: 1px solid #ececec; border-radius: 12px; padding: 14px 16px; transition: box-shadow 0.15s; }
+  .result-count { font-size: 12px; color: #999; margin-bottom: 10px; }
+  #cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 11px; margin-bottom: 26px; }
+  .vcard { background: #fff; border: 1px solid #ececec; border-radius: 12px; padding: 13px 15px; transition: box-shadow 0.15s; }
   .vcard:hover { box-shadow: 0 2px 12px rgba(238,77,45,0.1); border-color: #f5b8aa; }
   .vcard.is-short { border-left: 3px solid #e67e22; }
-  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
-  .tag { font-size: 11px; border-radius: 4px; padding: 2px 8px; font-weight: 500; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+  .tag { font-size: 11px; border-radius: 4px; padding: 2px 7px; font-weight: 500; }
   .tag-urgent { background: #feecec; color: #c0392b; }
   .tag-long { background: #eaf3de; color: #2e7d32; }
   .tag-short { background: #fef3e2; color: #c0540a; }
-  .card-title { font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 5px; line-height: 1.4; }
-  .card-meta { font-size: 12px; color: #777; margin-bottom: 6px; display: flex; flex-wrap: wrap; gap: 6px; }
-  .card-days { font-size: 12px; color: #888; margin-bottom: 7px; }
-  .card-note { font-size: 12px; color: #555; border-top: 1px solid #f0f0f0; padding-top: 8px; margin-top: 4px; line-height: 1.5; }
+  .card-title { font-size: 13.5px; font-weight: 700; color: #1a1a1a; margin-bottom: 5px; line-height: 1.4; }
+  .card-meta { font-size: 12px; color: #777; margin-bottom: 4px; }
+  .card-addr { font-size: 11px; color: #bbb; margin-bottom: 5px; }
+  .card-days { font-size: 12px; color: #888; margin-bottom: 6px; }
+  .card-note { font-size: 12px; color: #555; border-top: 1px solid #f0f0f0; padding-top: 7px; margin-top: 4px; line-height: 1.5; }
   .no-results { grid-column: 1/-1; text-align: center; padding: 40px; color: #aaa; font-size: 14px; }
 
-  .notice { background: #f5f5f5; border-radius: 10px; padding: 12px 16px; margin-bottom: 20px; font-size: 12.5px; color: #666; line-height: 1.7; text-align: center; }
+  .notice { background: #f5f5f5; border-radius: 10px; padding: 11px 15px; margin-bottom: 18px; font-size: 12.5px; color: #666; line-height: 1.7; text-align: center; }
   .notice strong { color: #c0392b; }
 
-  .contact-card { background: #fff; border: 1.5px solid #EE4D2D; border-radius: 14px; padding: 20px 22px; }
-  .contact-title { font-size: 14px; font-weight: 700; color: #EE4D2D; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
-  .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 14px; }
-  .contact-item { display: flex; align-items: center; gap: 10px; background: #fdf5f3; border-radius: 8px; padding: 10px 12px; }
-  .contact-icon { font-size: 20px; flex-shrink: 0; }
+  .contact-card { background: #fff; border: 1.5px solid #EE4D2D; border-radius: 14px; padding: 18px 20px; }
+  .contact-title { font-size: 14px; font-weight: 700; color: #EE4D2D; margin-bottom: 13px; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 9px; margin-bottom: 13px; }
+  .contact-item { display: flex; align-items: center; gap: 10px; background: #fdf5f3; border-radius: 8px; padding: 9px 12px; }
+  .contact-icon { font-size: 19px; flex-shrink: 0; }
   .contact-label { font-size: 11px; color: #999; margin-bottom: 2px; }
   .contact-value { font-size: 13px; font-weight: 600; color: #1a1a1a; }
-  .contact-note { font-size: 12px; color: #888; line-height: 1.6; text-align: center; border-top: 1px solid #f0ece9; padding-top: 12px; }
+  .contact-note { font-size: 12px; color: #888; line-height: 1.6; text-align: center; border-top: 1px solid #f0ece9; padding-top: 11px; }
 
   @media (max-width: 500px) {
-    .header { padding: 20px 16px; }
+    .header { padding: 18px 14px; }
     .header-title { font-size: 18px; }
     #cards { grid-template-columns: 1fr; }
   }
@@ -89,7 +88,7 @@
   </div>
 
   <div class="trust-bar">
-    <div class="icon">🛡️</div>
+    <div style="font-size:18px;margin-top:1px;flex-shrink:0;">🛡️</div>
     <p>本懶人包由 <strong>邁斯朋招募顧問 Aiyu</strong> 提供，所有職缺均為正式派遣職缺。<strong>面試全程不收取任何費用</strong>，若有任何疑問歡迎直接聯繫顧問確認。</p>
   </div>
 
@@ -97,7 +96,7 @@
     <div class="perks-title">⭐ 蝦皮總部工作的優點</div>
     <ul class="perks-list">
       <li>電話書審通過即可錄取，流程快速不繁瑣</li>
-      <li>位於台北市區，交通便利（信義/南港/松山）</li>
+      <li>位於台北市區，交通便利（信義/南港/松山/中正）</li>
       <li>時薪196元起，部分職缺月薪33K~42K</li>
       <li>排班彈性，可配合學校課表調整出勤</li>
       <li>知名電商品牌，實務經驗豐富、履歷加分</li>
@@ -105,15 +104,11 @@
     </ul>
   </div>
 
-  <!-- 短期職缺獨立篩選列 -->
   <div class="shortterm-row">
     <div class="shortterm-label">⏰ 快速篩選短期職缺</div>
-    <div class="shortterm-btns">
-      <button class="st-btn" onclick="toggleShortOnly(this)">只看短期職缺</button>
-    </div>
+    <button class="st-btn" onclick="toggleShortOnly(this)">只看短期職缺</button>
   </div>
 
-  <!-- 類別 & 區域篩選 -->
   <div class="filter-section">
     <div class="filter-label">依職缺類別篩選</div>
     <div class="filter-row" id="cat-filters">
@@ -121,20 +116,17 @@
       <button class="fbtn" onclick="setFilter('cat','行政/業務助理',this)">📋 行政/業務助理</button>
       <button class="fbtn" onclick="setFilter('cat','內容標註',this)">🏷️ 內容標註</button>
       <button class="fbtn" onclick="setFilter('cat','直播/行銷',this)">🎬 直播/行銷</button>
-      <button class="fbtn" onclick="setFilter('cat','工程/外勤',this)">🔧 工程/外勤</button>
     </div>
     <div class="filter-label">依工作區域篩選</div>
     <div class="filter-row" id="loc-filters">
       <button class="fbtn active" onclick="setFilter('loc','all',this)">全部地區</button>
       <button class="fbtn" onclick="setFilter('loc','台北希望',this)">📍 台北（希望）</button>
       <button class="fbtn" onclick="setFilter('loc','台北松菸',this)">📍 台北（松菸）</button>
-      <button class="fbtn" onclick="setFilter('loc','台中',this)">📍 台中</button>
-      <button class="fbtn" onclick="setFilter('loc','台南',this)">📍 台南</button>
-      <button class="fbtn" onclick="setFilter('loc','北區外勤',this)">📍 北區外勤</button>
       <button class="fbtn" onclick="setFilter('loc','UDN',this)">📍 UDN</button>
     </div>
   </div>
 
+  <div class="result-count" id="result-count"></div>
   <div id="cards"></div>
 
   <div class="notice">
@@ -147,24 +139,15 @@
     <div class="contact-grid">
       <div class="contact-item">
         <div class="contact-icon">💬</div>
-        <div>
-          <div class="contact-label">LINE@</div>
-          <div class="contact-value">@pqw3539q</div>
-        </div>
+        <div><div class="contact-label">LINE@</div><div class="contact-value">@pqw3539q</div></div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📞</div>
-        <div>
-          <div class="contact-label">電話</div>
-          <div class="contact-value">02-6605-0545 #202</div>
-        </div>
+        <div><div class="contact-label">電話</div><div class="contact-value">02-6605-0545 #202</div></div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
-        <div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">aiyu@tw-msp.com</div>
-        </div>
+        <div><div class="contact-label">Email</div><div class="contact-value">aiyu@tw-msp.com</div></div>
       </div>
     </div>
     <div class="contact-note">請提供姓名、應徵職缺、可上班時間及履歷，顧問將盡快與您聯繫 🙌</div>
@@ -173,39 +156,40 @@
 </div>
 
 <script>
+const locAddress = {
+  '台北希望': '中正區八德路一段55號4樓',
+  '台北松菸': '信義區菸廠路88號9樓',
+  'UDN': '信義區忠孝東路四段555號17樓',
+};
+
 const jobs = [
-  // 行政/業務助理
-  {title:"(UDN)行政總台", loc:"UDN", type:"長期", pay:"月薪（依面議）", days:"週一~五 09:00-18:00", note:"接聽電話、過濾、轉接來電，需穩定出勤", cat:"行政/業務助理", urgent:false, short:false},
-  {title:"Payments 財務行政工讀生", loc:"台北希望", type:"長期", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"具Excel樞紐/Vlookup能力佳，有訓練觀察期機制", cat:"行政/業務助理", urgent:false, short:false},
-  {title:"Campaign Ops 行政工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"一週5天全天", note:"推播/活動頁設定，重複性高，需細心", cat:"行政/業務助理", urgent:true, short:false},
-  {title:"行政助理/客服團隊", loc:"台北希望", type:"長期", pay:"月薪33,000", days:"週一~五 09:00-18:00", note:"資料key入+少量電話，需穩定出勤，需提供錄音檔", cat:"行政/業務助理", urgent:false, short:false},
-  {title:"服飾業務助理", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"協助廠商邀稿、表單整理，需Excel操作能力", cat:"行政/業務助理", urgent:false, short:false},
-  {title:"(松菸)CFS 限時特賣工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週5天", note:"限時特賣工作需要一天8小時都使用系統，需能長時間專注操作", cat:"行政/業務助理", urgent:false, short:false},
+  // ── UDN ──
+  {title:"(UDN)行政總台", loc:"UDN", type:"長期", pay:"月薪（面議）", days:"週一~五 09:00-18:00", note:"接聽電話/訪客面試接待/行政庶務/包裹寄件協助", cat:"行政/業務助理", urgent:false, short:false},
+  {title:"(UDN)展店行政工讀生（北區）", loc:"UDN", type:"長期", pay:"時薪196元", days:"週一~五，可3~4天（5天尤佳）09:00-18:00", note:"門市維修案件追蹤/電費管理/行政庶務，需Excel/Google Sheet", cat:"行政/業務助理", urgent:false, short:false},
+  {title:"(UDN)營運行政工讀生", loc:"UDN", type:"長期", pay:"時薪196元", days:"每週5天（可周休六日）", note:"供應商報表維護/人力調查/主管交辦事項", cat:"行政/業務助理", urgent:false, short:false},
+  {title:"(UDN)SPX門市營運工讀生", loc:"UDN", type:"長期", pay:"時薪196元", days:"每週至少3天（4天以上佳）", note:"門市營運追蹤/異常案例分析/監視器查看記錄，遇不懂作業需主動回報處理方式", cat:"行政/業務助理", urgent:false, short:false},
+
+  // ── 台北希望 ──
+  {title:"Payments(A) 財務行政工讀生", loc:"台北希望", type:"長期", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"發票核對/Excel帳務處理，需樞紐/Vlookup，有訓練觀察期機制", cat:"行政/業務助理", urgent:true, short:false},
+  {title:"Payments(C) 帳務報表工讀生", loc:"台北希望", type:"長期", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"金流相關帳務報表整理及編制，需Excel樞紐/Vlookup，有訓練觀察期機制", cat:"行政/業務助理", urgent:false, short:false},
+  {title:"行政助理／客服團隊", loc:"台北希望", type:"長期", pay:"月薪33,000", days:"週一~五 09:00-18:00", note:"案件資料key入（每天70~100筆）/少量電話聯繫賣家，需提供錄音檔", cat:"行政/業務助理", urgent:false, short:false},
+  {title:"內容標註專員A", loc:"台北希望", type:"短期(~09/30)", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"遵循SOP標註內容，到職一週考核，表現優異者有機會續約", cat:"內容標註", urgent:true, short:true},
+  {title:"內容標註專員B", loc:"台北希望", type:"短期(~09/30)", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"協助模型資料審核，到職一週考核，通過才能繼續合作", cat:"內容標註", urgent:true, short:true},
+  {title:"內容標註專員C", loc:"台北希望", type:"短期(~09/30)", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"確認搜尋關鍵字準確度/稽查無關商品，表現優異者有機會續約", cat:"內容標註", urgent:true, short:true},
+
+  // ── 台北松菸 ──
+  {title:"Campaign Ops 行政工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"一週5天 09:00-18:00", note:"推播/活動頁/優惠券設定，容錯率低，需高專注力與細心，可接受假日支援加班", cat:"行政/業務助理", urgent:true, short:false},
+  {title:"服飾業務助理", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"廠商邀稿/表單整理，需Excel樞紐/Vlookup", cat:"行政/業務助理", urgent:false, short:false},
+  {title:"CFS 限時特賣工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週至少3天（週三四五佳）", note:"商品審核/後台設定，一天8小時都使用系統，需長時間專注操作，需配合半年以上", cat:"行政/業務助理", urgent:false, short:false},
   {title:"寵物品類業務助理", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週3~5天 09:00-18:00", note:"版位切品/業務通知/數據紀錄", cat:"行政/業務助理", urgent:true, short:false},
-  {title:"母嬰童玩具品類行政助理", loc:"台北松菸", type:"短期(~09/30)", pay:"時薪196元", days:"配合排班4天，5天為佳", note:"品類行政支援，短期合約至09/30", cat:"行政/業務助理", urgent:false, short:true},
-  {title:"電子票券品類工讀生", loc:"台北松菸", type:"短期(~11/30)", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"品類數據整理/表單管理/行政庶務", cat:"行政/業務助理", urgent:false, short:true},
-  {title:"Books品類管理工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週4天以上 09:30-18:30", note:"活動規劃+成效數據分析+競業調查，簽6個月合約", cat:"行政/業務助理", urgent:true, short:false},
   {title:"蝦皮廣告行政工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週3~5天 09:30-18:30", note:"委刊單開立/廣告入稿追蹤，需熟悉基本文書工具", cat:"行政/業務助理", urgent:false, short:false},
-  {title:"蝦皮站內廣告行政工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"至少3天", note:"廣告金處理/文案撰寫，具英文能力加分", cat:"行政/業務助理", urgent:false, short:false},
-  {title:"法規遵循行政工讀生", loc:"台北希望", type:"短期(~11/13)", pay:"時薪196元", days:"週一~五 09:00-18:00", note:"文件掃描建檔/歸檔管理/倉庫盤點", cat:"行政/業務助理", urgent:true, short:true},
-  {title:"(UDN)展店行政工讀生（北區）", loc:"UDN", type:"長期", pay:"時薪196元", days:"週一~五 09:00-18:00，可3~4天", note:"門市維修案件追蹤/電費管理/行政庶務", cat:"行政/業務助理", urgent:false, short:false},
-  {title:"(UDN)營運行政工讀生", loc:"UDN", type:"長期", pay:"時薪196元", days:"每週5天可周休六日", note:"供應商報表維護/人力調查/主管交辦事項", cat:"行政/業務助理", urgent:false, short:false},
-  {title:"(UDN)SPX門市營運工讀生", loc:"UDN", type:"長期", pay:"時薪196元", days:"每週至少3天，4天以上佳", note:"遇到看不懂、不理解的交辦作業會如何處理，需有問題解決能力", cat:"行政/業務助理", urgent:false, short:false},
-  // 內容標註
-  {title:"內容標註專員A/B/C", loc:"台北希望", type:"短期(~09/30)", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"遵循SOP標註內容，表現優異者有機會續約", cat:"內容標註", urgent:true, short:true},
-  {title:"內容標註專員D（成人內容審核）", loc:"台北希望", type:"短期(~12/31)", pay:"時薪196元", days:"週一~五全天", note:"需長時間查看圖文影音，心理素質要求較高", cat:"內容標註", urgent:true, short:true},
-  {title:"翻譯數據標註員", loc:"台北希望", type:"長期", pay:"時薪196元", days:"每週5天", note:"中英文文件翻譯/標註，需多益550以上，需打字測驗", cat:"內容標註", urgent:true, short:false},
-  // 直播/行銷
-  {title:"社群營運工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週3~4天", note:"輿情監測/報告撰寫/FB活動行政庶務", cat:"直播/行銷", urgent:false, short:false},
-  {title:"行銷分潤計畫工讀生（KOL）", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週5天", note:"開發KOL名單/寄送邀約/後台資料處理", cat:"直播/行銷", urgent:true, short:false},
-  {title:"直播節目助理（晚班14:00-23:00）", loc:"台北松菸", type:"長期", pay:"月薪35,000", days:"排班制 14:00-23:00", note:"直播前置/串流執行/腳本撰寫，需配合半年以上", cat:"直播/行銷", urgent:true, short:false},
-  {title:"明星直播間執行工讀生", loc:"台北松菸", type:"長期", pay:"月薪35,000", days:"配合直播時段（含夜場）", note:"現場執行OA節目，時間特殊，需確認可配合後再應徵", cat:"直播/行銷", urgent:true, short:false},
-  // 工程/外勤
-  {title:"(台中)門市教育訓練管理工讀生", loc:"台中", type:"長期", pay:"時薪196元", days:"每週4~5天，週一~四必到", note:"協助課程行政/通知信追蹤/現場觀察記錄", cat:"工程/外勤", urgent:false, short:false},
-  {title:"弱電設備工讀生（住台中優）", loc:"台中", type:"長期", pay:"月薪33~36K", days:"週二~六 09:30-18:30", note:"門市弱電裝機/報修，需自備機車，入職後可訓練", cat:"工程/外勤", urgent:false, short:false},
-  {title:"門市裝潢工程外勤專員（台中）", loc:"台中", type:"長期", pay:"月薪33~36K", days:"週一~五 09:30-18:30", note:"驗收/缺失追蹤/廠商接洽，需自備機車", cat:"工程/外勤", urgent:true, short:false},
-  {title:"門市建置外勤專員（台南）", loc:"台南", type:"長期", pay:"月薪33~36K", days:"週一~五", note:"設備驗收/報修追蹤，需自備機車，油資可實報", cat:"工程/外勤", urgent:false, short:false},
-  {title:"門市裝潢工程外勤專員（北區）", loc:"北區外勤", type:"長期", pay:"月薪33~36K", days:"週一~五 09:30-18:30", note:"支援桃園/新竹，外勤與內勤比例4:1，需自備機車", cat:"工程/外勤", urgent:false, short:false},
+  {title:"蝦皮站內廣告行政工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"至少3天/週", note:"廣告金處理/文案撰寫，具英文能力加分，能配合5天聘用機會較大", cat:"行政/業務助理", urgent:false, short:false},
+  {title:"行銷分潤計畫工讀生（KOL）", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週5天", note:"開發KOL名單/寄送邀約/後台資料處理，已更改配合天數五天", cat:"直播/行銷", urgent:true, short:false},
+  {title:"社群營運工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週3~4天", note:"輿情監測/風向分析/報告撰寫/FB活動行政庶務", cat:"直播/行銷", urgent:false, short:false},
+  {title:"Books品類管理工讀生", loc:"台北松菸", type:"長期", pay:"時薪196元", days:"每週4天以上 09:30-18:30", note:"活動規劃+成效數據分析+競業調查，簽6個月合約", cat:"行政/業務助理", urgent:true, short:false},
+  {title:"母嬰童玩具品類行政助理", loc:"台北松菸", type:"短期(~09/30)", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"版位切品/業務通知/活動數據記錄，需有辦公室行政經歷", cat:"行政/業務助理", urgent:false, short:true},
+  {title:"電子票券品類工讀生", loc:"台北松菸", type:"短期(~11/30)", pay:"時薪196元", days:"每週4~5天 09:00-18:00", note:"活動規劃執行/報表數據更新/跨部門溝通，需Excel樞紐/Vlookup", cat:"行政/業務助理", urgent:false, short:true},
+  {title:"直播節目助理（晚班14:00-23:00）", loc:"台北松菸", type:"長期", pay:"月薪35,000", days:"排班制 14:00-23:00（一到日）", note:"直播前置/串流執行/腳本撰寫，需配合半年以上", cat:"直播/行銷", urgent:true, short:false},
 ];
 
 let catFilter = 'all';
@@ -215,10 +199,8 @@ let shortOnly = false;
 function toggleShortOnly(btn) {
   shortOnly = !shortOnly;
   btn.classList.toggle('active', shortOnly);
-  // 短期模式開啟時重置其他篩選
   if (shortOnly) {
-    catFilter = 'all';
-    locFilter = 'all';
+    catFilter = 'all'; locFilter = 'all';
     document.querySelectorAll('#cat-filters .fbtn, #loc-filters .fbtn').forEach(b => b.classList.remove('active'));
     document.querySelector('#cat-filters .fbtn').classList.add('active');
     document.querySelector('#loc-filters .fbtn').classList.add('active');
@@ -227,10 +209,8 @@ function toggleShortOnly(btn) {
 }
 
 function setFilter(type, val, btn) {
-  // 切換類別/區域篩選時關閉短期模式
   shortOnly = false;
   document.querySelector('.st-btn').classList.remove('active');
-
   if (type === 'cat') {
     catFilter = val;
     document.querySelectorAll('#cat-filters .fbtn').forEach(b => b.classList.remove('active'));
@@ -244,18 +224,18 @@ function setFilter(type, val, btn) {
 
 function renderCards() {
   const container = document.getElementById('cards');
+  const countEl = document.getElementById('result-count');
   const filtered = jobs.filter(j => {
     if (shortOnly) return j.short;
     const catOk = catFilter === 'all' || j.cat === catFilter;
     const locOk = locFilter === 'all' || j.loc === locFilter;
     return catOk && locOk;
   });
-
+  countEl.textContent = `共 ${filtered.length} 個職缺`;
   if (filtered.length === 0) {
     container.innerHTML = '<div class="no-results">目前此條件下無符合職缺，請調整篩選條件</div>';
     return;
   }
-
   container.innerHTML = filtered.map(j => `
     <div class="vcard${j.short ? ' is-short' : ''}">
       <div class="tags">
@@ -263,10 +243,8 @@ function renderCards() {
         <span class="tag ${j.short ? 'tag-short' : 'tag-long'}">${j.type}</span>
       </div>
       <div class="card-title">${j.title}</div>
-      <div class="card-meta">
-        <span>📍 ${j.loc}</span>
-        <span>💰 ${j.pay}</span>
-      </div>
+      <div class="card-meta">📍 ${j.loc} &nbsp;💰 ${j.pay}</div>
+      ${locAddress[j.loc] ? `<div class="card-addr">📌 台北市${locAddress[j.loc]}</div>` : ''}
       <div class="card-days">🕐 ${j.days}</div>
       <div class="card-note">${j.note}</div>
     </div>
